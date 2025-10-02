@@ -11,9 +11,13 @@
             box-sizing: border-box;
         }
 
-        body {
-            background-color: #ffffff; /* 整體白底 */
-            margin: 0;
+        body{
+            background:#fff;
+            margin:0;
+            width:210mm;          /* A4 寬度 */
+            max-width:210mm;
+            margin:0 auto;
+            word-wrap:break-word;
         }
 
         .container {
@@ -113,22 +117,10 @@
             margin-bottom: 2px;
             font-size: 12.5px;
             color: #555;
-            list-style-type: none;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .description li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #666;
         }
 
         .skills-grid {
             display: block;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
             margin-top: 20px;
         }
 
@@ -160,13 +152,7 @@
             color: #2980b9;
         }
 
-        /* 適合 A4 匯出 */
-        body {
-            width: 210mm;
-            max-width: 210mm;
-            margin: 0 auto;
-            word-wrap: break-word;
-        }
+        
 
         /* 避免文字太長超出邊界 */
         .description, .contact-info {
@@ -177,14 +163,6 @@
             size: A4;
             margin: 20mm;
         }
-
-        body {
-            width: 210mm;
-            max-width: 210mm;
-            margin: 0 auto;
-            word-wrap: break-word;
-        }
-
 
 
         @media (max-width: 768px) {
@@ -241,7 +219,7 @@
                         <div class="description">
                             <ul>
                                 <li>Currently studying as a senior student</li>
-                                <li>Currently in NTU TRAI lab</li>
+                                <li>Currently in NTU TRAI Lab</li>
                                 <li>Focused on advanced computer science, especially deep learning for computer vision.</li>
                             </ul>
                         </div>
@@ -259,8 +237,8 @@
                     <div class="position">Computer & Information Science Category</div>
                     <div class="description">
                         <ul>
-                            <li>Honorable Mention and Best Teamwork Award in Computer & Information Science</li>
-                            <li>Developed an embedded robot with face-mask detection (Python/OpenCV), infrared temperature sensing, and automatic sanitization using Arduino & Raspberry Pi.</li>
+                            <li><strong>Honorable Mention and Best Teamwork Award</strong> in Computer & Information Science</li>
+                            <li>Built embedded robot integrating mask detection (Python/OpenCV), IR temp sensing, auto sanitization (Raspberry Pi/Arduino); optimized for real-time.</li>
                             <li>Optimized mask recognition model for real-time operation on Raspberry Pi.</li>
                           	<li>Designed a Wi-Fi remote-controlled mobile base to minimize human contact.</li>
                         </ul>
@@ -274,7 +252,7 @@
                     <div class="position">Computer & Information Science Category</div>
                     <div class="description">
                         <ul>
-                            <li>First Place in Computer & Information Science</li>
+                            <li><strong>First Place</strong> in Computer & Information Science</li>
                             <li>Researched computer vision-based face-mask detection using Python/OpenCV and neural network models; tested on real-world images to improve accuracy in crowded scenes.</li>
                             <li>Explored integration of infrared temperature sensing and cloud-based reporting to support epidemic data tracking.</li>
                             <li>Proposed an automated triage framework to support pandemic response.</li>
@@ -306,7 +284,7 @@
                              </ul>
                         </div>
                      
-                     <div class="skill-title">Coding skills</div>
+                     <div class="skill-title">Coding Skills</div>
                      <div class="description">
                         <ul>
                           <li>Programming: Python, C/C++</li>
