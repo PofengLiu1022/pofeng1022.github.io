@@ -1,113 +1,310 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>超級討人厭的提醒訊息</title>
+    <title>Po-Feng Liu - Resume</title>
     <style>
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(45deg, #ff69b4, #ffd700, #00ff7f, #1e90ff);
-            background-size: 400% 400%;
-            animation: rainbow 3s ease infinite;
-            padding: 20px;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
         }
-        
+
         .container {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-            border: 5px solid #ff1493;
-            animation: bounce 2s infinite;
+            background: white;
+            padding: 40px 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        .message {
-            font-size: 24px;
-            color: #ff1493;
+
+        .header {
             text-align: center;
-            line-height: 1.8;
-            animation: blink 1.5s infinite;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
         }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.7; }
-        }
-        
-        .emoji {
-            font-size: 30px;
-            animation: spin 2s linear infinite;
-            display: inline-block;
-            margin: 0 5px;
-        }
-        
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .sparkle {
-            color: #ffd700;
-            animation: sparkle 1s infinite alternate;
-        }
-        
-        @keyframes sparkle {
-            from { transform: scale(1); }
-            to { transform: scale(1.2); }
-        }
-        
-        .urgent {
-            color: #ff0000;
+
+        .name {
+            font-size: 28px;
             font-weight: bold;
-            animation: shake 0.5s infinite;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
+
+        .contact-info {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .experience-left {
+            flex: 1;
+        }
+
+        .experience-right {
+            text-align: right;
+            min-width: 120px;
+            margin-left: 20px;
+        }
+
+        .organization {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .position {
+            font-weight: bold;
+            font-size: 14px;
+            color: #34495e;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .location {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .description {
+            margin-top: 8px;
+        }
+
+        .description li {
+            margin-bottom: 2px;
+            font-size: 12.5px;
+            color: #555;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+
+        .skills-grid {
+            display: block;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .skill-title {
+            font-weight: bold;
+            font-size: 14px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .skill-content {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .current-status {
+            background: #f5f7f9;
+            padding: 12px 16px;
+            margin-bottom: 15px;
+        }
+
+        .current-status .organization {
+            color: #2980b9;
+        }
+
+        /* 適合 A4 匯出 */
+        body {
+            width: 210mm;
+            max-width: 210mm;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        /* 避免文字太長超出邊界 */
+        .description, .contact-info {
+            word-break: break-word;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .experience-item {
+                flex-direction: column;
+            }
+            
+            .experience-right {
+                text-align: left;
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .kuse-branding {
+                position: static;
+                margin-top: 40px;
+                align-self: flex-end;
+                width: fit-content;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="message">
-            <span class="sparkle">✨</span><span class="emoji">🎭</span><span class="sparkle">✨</span><br><br>
+        <div class="header">
+            <h1 class="name">PO-FENG, LIU</h1>
+            <div class="contact-info">
+                Computer Science & Information Engineering Student<br>
+                National Taiwan University • Senior Year<br>
+                Email: b11902081@ntu.edu.tw | GitHub: github.com/PofengLiu1022
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Current Status</h2>
+            <div class="current-status">
+                <div class="experience-item">
+                    <div class="experience-left">
+                        <div class="organization">National Taiwan University</div>
+                        <div class="position">Department of Computer Science & Information Engineering</div>
+                        <div class="description">
+                            <ul>
+                                <li>Currently studying as a senior student</li>
+                                <li>Currently in NTU TRAI lab</li>
+                                <li>Focused on advanced computer science, especially deep learning for computer vision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Awards & Achievements</h2>
             
-            親愛的小寶貝～～～<span class="emoji">😘</span><span class="emoji">💕</span><span class="emoji">🥰</span><br><br>
-            
-            <span class="urgent">⚠️⚠️⚠️ 超級重要提醒 ⚠️⚠️⚠️</span><br><br>
-            
-            明天記得記得記得<span class="emoji">📝</span><span class="emoji">🧠</span><span class="emoji">⏰</span><br>
-            一定一定一定要在<span class="urgent">1:50</span>準時到<br>
-            密室逃脫的地點唷～～～<span class="emoji">🏃‍♀️</span><span class="emoji">💨</span><span class="emoji">🗝️</span><br><br>
-            
-            <span class="urgent">最晚最晚最晚</span>不能超過<span class="urgent">兩點</span><span class="emoji">⏰</span><span class="emoji">😤</span><span class="emoji">💢</span><br>
-            因為還要先繳費那些的啦～～～<span class="emoji">💰</span><span class="emoji">💳</span><span class="emoji">🤑</span><br>
-            怕來不及怕來不及怕來不及<span class="emoji">😱</span><span class="emoji">😰</span><span class="emoji">🏃‍♂️</span><br><br>
-            
-            拜託拜託拜託不要遲到<span class="emoji">🙏</span><span class="emoji">🙏</span><span class="emoji">🙏</span><br>
-            人家會擔心的啦～～～<span class="emoji">😭</span><span class="emoji">💔</span><span class="emoji">😢</span><br><br>
-            
-            <span class="sparkle">✨</span><span class="emoji">💖</span> 愛你的小天使 <span class="emoji">💖</span><span class="sparkle">✨</span><br>
-            <span class="emoji">😇</span><span class="emoji">👼</span><span class="emoji">💫</span><span class="emoji">🌟</span><span class="emoji">⭐</span><span class="emoji">🌈</span><span class="emoji">🦄</span>
+            <div class="experience-item">
+                <div class="experience-left">
+                    <div class="organization">61st National Primary & High School Science Fair</div>
+                    <div class="position">Computer & Information Science Category</div>
+                    <div class="description">
+                        <ul>
+                            <li>Honorable Mention and Best Teamwork Award in Computer & Information Science</li>
+                            <li>Developed an embedded robot with face-mask detection (Python/OpenCV), infrared temperature sensing, and automatic sanitization using Arduino & Raspberry Pi.</li>
+                            <li>Optimized mask recognition model for real-time operation on Raspberry Pi.</li>
+                          	<li>Designed a Wi-Fi remote-controlled mobile base to minimize human contact.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-left">
+                    <div class="organization">2021 Taichung City Science Fair</div>
+                    <div class="position">Computer & Information Science Category</div>
+                    <div class="description">
+                        <ul>
+                            <li>First Place in Computer & Information Science</li>
+                            <li>Researched computer vision-based face-mask detection using Python/OpenCV and neural network models; tested on real-world images to improve accuracy in crowded scenes.</li>
+                            <li>Explored integration of infrared temperature sensing and cloud-based reporting to support epidemic data tracking.</li>
+                            <li>Proposed an automated triage framework to support pandemic response.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-title">Language Proficiency</div>
+                        <div class="description">
+                        	<ul>
+                            	<li>Chinese — Native</li>
+                            	<li>English — Intermediate (TOEIC Golden Certificate; GEPT High Intermediate Level)</li>
+                            </ul>
+                        </div>
+                    
+                    <div class="skill-title">Related Academic Performance</div>
+                        <div class="description">
+                        	<ul>
+                            	<li>Machine Learning (A+), Introduction to Generative Artificial Intelligence (A+), Digital Systems Design and Laboratory (A+), Discrete Mathematics (A+)</li>
+                            	<li>Operating Systems (A), Introduction to Computer Programming (A), Computer Networks (A), Computer Network Laboratory (A), Formal Languages and Automata Theory (A)</li>
+                             </ul>
+                        </div>
+                     
+                     <div class="skill-title">Coding skills</div>
+                     <div class="description">
+                        <ul>
+                          <li>Programming: Python, C/C++</li>
+                          <li>Tools & Frameworks: PyTorch, OpenCV, Linux, Git</li>
+                        </ul>
+                      </div>
+                      
+                </div> 
+            </div>
         </div>
     </div>
 </body>
