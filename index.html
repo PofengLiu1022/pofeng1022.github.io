@@ -11,13 +11,9 @@
             box-sizing: border-box;
         }
 
-        body{
-            background:#fff;
-            margin:0;
-            width:210mm;          /* A4 寬度 */
-            max-width:210mm;
-            margin:0 auto;
-            word-wrap:break-word;
+        body {
+            background-color: #ffffff; /* 整體白底 */
+            margin: 0;
         }
 
         .container {
@@ -113,27 +109,26 @@
             margin-top: 8px;
         }
 
-        /* 修正列表縮排與圓點樣式（不外凸） */
-        .description ul {
-            margin: 0;              /* 清掉瀏覽器預設外距 */
-            padding-left: 18px;     /* 統一左縮排（可微調 16~22px） */
-            list-style: disc;       /* 用原生圓點，PDF 不會跑位 */
-            list-style-position: outside; /* 換行時文字與圓點對齊 */
-        }
-
-            /* 行距微調：讓段落更緊湊 */
         .description li {
-            margin-bottom: 2px;     /* 你原本的設定可保留 */
+            margin-bottom: 2px;
+            font-size: 12.5px;
+            color: #555;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
         }
 
-        /* 可選：圓點顏色一致 */
-        .description li::marker {
+        .description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
             color: #666;
         }
 
-
         .skills-grid {
             display: block;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
             margin-top: 20px;
         }
 
@@ -165,7 +160,13 @@
             color: #2980b9;
         }
 
-        
+        /* 適合 A4 匯出 */
+        body {
+            width: 210mm;
+            max-width: 210mm;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
 
         /* 避免文字太長超出邊界 */
         .description, .contact-info {
@@ -176,6 +177,14 @@
             size: A4;
             margin: 20mm;
         }
+
+        body {
+            width: 210mm;
+            max-width: 210mm;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
 
 
         @media (max-width: 768px) {
