@@ -113,11 +113,24 @@
             margin-top: 8px;
         }
 
-        .description li {
-            margin-bottom: 2px;
-            font-size: 12.5px;
-            color: #555;
+        /* 修正列表縮排與圓點樣式（不外凸） */
+        .description ul {
+            margin: 0;              /* 清掉瀏覽器預設外距 */
+            padding-left: 18px;     /* 統一左縮排（可微調 16~22px） */
+            list-style: disc;       /* 用原生圓點，PDF 不會跑位 */
+            list-style-position: outside; /* 換行時文字與圓點對齊 */
         }
+
+            /* 行距微調：讓段落更緊湊 */
+        .description li {
+            margin-bottom: 2px;     /* 你原本的設定可保留 */
+        }
+
+        /* 可選：圓點顏色一致 */
+        .description li::marker {
+            color: #666;
+        }
+
 
         .skills-grid {
             display: block;
